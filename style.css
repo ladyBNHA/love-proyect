@@ -1,0 +1,148 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Contenedores */
+.container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.question-container {
+  display: flex; /* se muestra primero */
+}
+
+video {
+  width: 200px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+/* Texto */
+h2 {
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Botones */
+.button-container {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.yes-btn {
+  background: #ff4f81;
+  color: white;
+}
+
+.no-btn {
+  background: #444;
+  color: white;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+/* ❤️ Animación corazón */
+.cssload-main {
+  margin-top: 40px;
+  position: relative;
+  width: 100px;
+  height: 90px;
+}
+
+.cssload-heart {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 100px;
+  height: 90px;
+  transform: translateX(-50%);
+  animation: beat 1s infinite;
+}
+
+.cssload-heartL, .cssload-heartR {
+  position: absolute;
+  width: 50px;
+  height: 80px;
+  background: #ff4f81;
+  border-radius: 50px 50px 0 0;
+}
+
+.cssload-heartL {
+  left: 0;
+  transform: rotate(-45deg);
+  transform-origin: 100% 100%;
+}
+
+.cssload-heartR {
+  right: 0;
+  transform: rotate(45deg);
+  transform-origin: 0 100%;
+}
+
+.cssload-square {
+  position: absolute;
+  top: 40px;
+  left: 25px;
+  width: 50px;
+  height: 50px;
+  background: #ff4f81;
+}
+
+.cssload-shadow {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  width: 100px;
+  height: 15px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  animation: shadow 1s infinite;
+}
+
+@keyframes beat {
+  0%, 100% {
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.2);
+  }
+}
+
+@keyframes shadow {
+  0%, 100% {
+    transform: translateX(-50%) scaleX(1);
+  }
+  50% {
+    transform: translateX(-50%) scaleX(1.3);
+  }
+}
